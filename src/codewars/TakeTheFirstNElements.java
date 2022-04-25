@@ -7,21 +7,22 @@ public class TakeTheFirstNElements {
     //https://www.codewars.com/kata/545afd0761aa4c3055001386/train/java
 
     public static int[] take(int[] arr, int n) {
-        if (n <= arr.length) {
+        if (n < 0) {
+            return new int[0];
+        } else if (n > arr.length) {
+            return arr;
+        } else {
             int[] res = new int[n];
-            for (int i = 0; i < res.length; i++) {
-                res[i] = arr[i];
+            int count = 0;
+            for (int i = 0; i < n; i++) {
+                res[count++] = arr[i];
             }
             return res;
-        } else if(arr.length == 0){
-                return null;
-        } else {
-            return new int[0];
         }
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(take(new int[]{-49, -43, -11, 9}, 3)));
+        System.out.println(Arrays.toString(take(new int[]{-49, -43, -11, 9, 11, 2, 5}, 10)));
 
     }
 }
