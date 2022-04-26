@@ -16,7 +16,17 @@ public class TrafficLight {
             }
     }
 
+    public static String updateLight2(String current) {
+        switch(current){
+            case "red": return "green";
+            case "green": return "yellow";
+            case "yellow": return "red";
+            default: return "BOLT!";
+        }
+    }
+
     public static void main(String[] args) {
+        System.out.println(updateLight2("reddf"));
 
     }
 }
