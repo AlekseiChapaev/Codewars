@@ -1,3 +1,3 @@
 # Project exclude paths
 /out/
-/training/
+/training/!/src/codewars/kyu_8/Training.java
