@@ -1,21 +1,23 @@
 package codewars.kyu_8;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Training {
 
-    public static String solution(String str) {
-        return new StringBuilder(str).reverse().toString();
-//        return Stream.of(str.toCharArray()).sorted().toString();
+    public static String well(String[] x) {
+        long count = Arrays.stream(x).filter(s -> s.equals("good")).count();
+
+        if (count == 0) return "Fail!";
+        if (count > 2) {
+            return "I smell a series!";
+        } else {
+            return "Publish!";
+        }
     }
 
     public static void main(String[] args) {
 
-        System.out.println(solution("worldworld"));
+        System.out.println(well(new String[]{"good", "bad", "bad", "bad", "bad", "good", "bad", "bad", "good"}));
     }
 
 }

@@ -1,23 +1,22 @@
 package codewars.kyu_8;
 
+import java.util.Arrays;
+
 public class WellOfIdeas {
 
     //https://www.codewars.com/kata/57f222ce69e09c3630000212/train/java
 
     public static String well(String[] x) {
-        int countGood = 0;
-        for (int i = 0; i < x.length; i++) {
-            if(x[i].toLowerCase().equals("good")){
-                countGood++;
-            }
-        }
-            if(countGood == 0){
+
+        long countGood = Arrays.stream(x).filter(s -> s.equals("good")).count();
+
+        if(countGood == 0) {
             return "Fail!";
-        } else if(countGood < 3){
+        } else if (countGood < 3){
                 return "Publish!";
-        } else{
+        } else {
                 return "I smell a series!";
-            }
+        }
     }
 
     public static void main(String[] args) {
