@@ -1,16 +1,24 @@
 package codewars.kyu_8;
 
+import java.util.Arrays;
+
 public class Training {
 
-    public static int pillars(int numPill, int dist, int width) {
-        if (numPill == 1) return 0;
-        else if (numPill == 2) return dist * 100;
-        else
-            return 100 * numPill * dist + (numPill - 2) * width;
+    public static String smash(String... words) {
+        if (words.length > 0) {
+            return Arrays.stream(words).reduce((s1, s2) -> s1.concat(" ").concat(s2)).get();
+        }
+        else return null;
     }
 
     public static void main(String[] args) {
-        System.out.println(pillars(2,20,25));
+//        System.out.println(smash("hello", "world", "this", "is", "great"));
+
+        String a = "hello";
+        String b = "world";
+//        System.out.println(String.join(" ", a, b));
+        System.out.println(String.join("*", a, b, "hd"));
+
     }
 
 }
