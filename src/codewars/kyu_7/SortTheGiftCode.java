@@ -25,5 +25,6 @@ public class SortTheGiftCode {
 
     public static void main(String[] args) {
         System.out.println(sortGiftCode("fedcba"));
+
     }
 }
