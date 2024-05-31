@@ -1,16 +1,13 @@
-package codewars;
+package codewars.kyu_8;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.stream.IntStream;
 
+public class FindSmallestInt {
 
-public class Training {
+    //https://www.codewars.com/kata/55a2d7ebe362935a210000b2/train/java
 
     public static int findSmallestInt(int[] args) {
-        return Arrays.stream(args)
+        return IntStream.of(args)
                 .min()
                 .getAsInt();
     }
@@ -18,5 +15,4 @@ public class Training {
     public static void main(String[] args) {
         System.out.println(findSmallestInt(new int[] {1, 2, -4}));
     }
-
 }
