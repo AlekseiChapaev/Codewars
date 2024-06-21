@@ -1,4 +1,7 @@
 package codewars.kyu_8;
+
+import java.util.stream.Stream;
+
 public class CodeChallenge_18 {
 
     /**
@@ -6,15 +9,18 @@ public class CodeChallenge_18 {
      */
 
     public static int strCount(String str, char letter) {
-        char[] chars = str.toCharArray();
-        int count = 0;
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == letter) {
-                count++;
-            }
-        }
 
-        return count;
+        return (int)str.chars().filter(x -> x == letter).count();
+
+//        char[] chars = str.toCharArray();
+//        int count = 0;
+//        for (int i = 0; i < chars.length; i++) {
+//            if (chars[i] == letter) {
+//                count++;
+//            }
+//        }
+//
+//        return count;
     }
 
     public static void main(String[] args) {

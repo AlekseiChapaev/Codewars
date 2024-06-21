@@ -9,13 +9,18 @@ import java.util.stream.Stream;
 
 public class Training {
 
-    public static List<String> sort(List<String> textbooks) {
-
-        return textbooks.stream().sorted(String::compareToIgnoreCase).collect(Collectors.toList());
+    public static int strCount(String str, char letter) {
+        int count = 0;
+        for(char c: str.toCharArray()) {
+            if(c == letter) {
+                count += 1;
+            }
+        }
+        return count;
     }
 
     public static void main(String[] args) {
-        System.out.println(sort(List.of("Algebra", "history", "english", "Geometry", "History")));
+        System.out.println(strCount("Hello", 'w'));
     }
 
 }
